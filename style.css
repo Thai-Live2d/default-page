@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('./components.css');
+
+:root, html[data-theme="light"] {
+    --theme-color: 255, 255, 255;
+    --primary-rgb: 0, 162, 255;
+    --background-start-rgb: 200, 200, 200;
+    --background-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background: rgb(var(--background-rgb));
+    --foreground: rgb(var(--foreground-rgb));
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color: 0, 0, 0;
+        --background-start-rgb: 0, 0, 0;
+        --background-rgb: 32, 32, 32;
+        --foreground-rgb: 255, 255, 255;
+    }
+}
+
+* {
+  font-family: "Nunito", "Noto Sans Thai", sans-serif;
+  transition: .12s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    background: linear-gradient(
+        0deg,
+        rgba(var(--background-start-rgb)) 0%,
+        rgba(var(--background-rgb)) 100%
+    );
+    color: var(--foreground);
+}
+
+main#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    div.main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        gap: 1rem;
+    }
+}
+
+span.watermark {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    opacity: .12;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .64rem;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 128px;
+    }
+}

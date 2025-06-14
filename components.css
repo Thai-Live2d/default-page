@@ -1,0 +1,62 @@
+* {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+*:focus-visible {
+    outline-color: rgb(var(--primary-rgb), .32);
+}
+
+a {
+    nav-index: -1;
+}
+
+input {
+    field-sizing: content;
+    width: max-content;
+    max-width: 100%;
+    margin: 4px;
+    padding: 8px;
+    background-color: rgb(var(--theme-color), .24);
+    color: rgb(var(--foreground-rgb));
+    border: 0;
+    border-radius: 8px;
+}
+
+button {
+    padding: 6px 12px;
+    background-color: rgb(var(--foreground-rgb));
+    border: 2px solid rgb(var(--foreground-rgb));
+    color: rgb(var(--background-rgb));
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* cursor: pointer; */
+}
+
+button:hover, button:focus-visible {
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+    transition-duration: .06s;
+}
+
+button[data-various="secondary"] {
+    border-color: transparent;
+    background-color: rgb(var(--theme-color));
+    color: rgb(var(--foreground-rgb));
+}
+
+button[data-various="border"] {
+    background-color: transparent;
+    color: rgb(var(--foreground-rgb));
+}
+
+button[data-various="ghost"] {
+    background-color: rgb(var(--foreground-rgb), .12);
+    border: 2px solid rgb(var(--foreground-rgb), .12);
+}
